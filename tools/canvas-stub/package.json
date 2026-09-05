@@ -1,0 +1,7 @@
+{
+  "name": "canvas-stub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Stub local para o pacote nativo 'canvas', usado só para satisfazer a dependência declarada pelo mind-ar. O código real de canvas nunca é importado pelo app (só por scripts/compile-targets.mjs, que roda localmente com o canvas de verdade).",
+  "main": "index.js"
+}
