@@ -17,7 +17,7 @@ Apontar a câmera para o primeiro alvo (portão de entrada): "Assim que a câmer
 (Opcional: mostrar o botão "Revelar dica (-30 pontos)" e explicar: "se a equipe travar numa pista, pode revelar uma dica extra, mas isso desconta 30 pontos da pontuação final — e só desconta na primeira vez.")
 
 ## 1:00–1:30 — Coleta e pontuação
-Tocar "Coletar" com o cristal visível. Mostrar a confirmação (+100 pontos) e a liberação da segunda pista.
+Tocar "Coletar" com a Chave da Acolhida visível. Mostrar a confirmação (+100 pontos) e a liberação da segunda pista.
 
 "Cada tesouro só pode ser coletado uma vez, e cada coleta vale 100 pontos. Se eu apontar para a imagem errada, o jogo avisa para seguir a pista atual em vez de deixar coletar qualquer coisa."
 
@@ -26,7 +26,7 @@ Tocar "Coletar" com o cristal visível. Mostrar a confirmação (+100 pontos) e 
 ## 1:30–2:15 — Acelerar até o final
 Para não gastar os 3 minutos coletando as 5 pistas ao vivo, alternar para o **modo demonstração** neste ponto para mostrar o restante do fluxo rapidamente:
 
-"Para mostrar o restante do fluxo sem percorrer o salão todo agora, alterno para o modo demonstração." → Entrar em modo demonstração, tocar "Simular descoberta" 4 vezes seguidas (pistas 2 a 5), mostrando a estrela dourada, a chave roxa, a moeda dourada e a gema verde.
+"Para mostrar o restante do fluxo sem percorrer o salão todo agora, alterno para o modo demonstração." → Entrar em modo demonstração, tocar "Simular descoberta" 4 vezes seguidas (pistas 2 a 5), mostrando os troféus Cristal da Escuta, Estrela da Alegria, Chama da Perseverança e Bússola do Propósito.
 
 ## 2:15–2:45 — Tela final
 Mostrar a tela final com o baú 3D. Tocar "Abrir tesouro": animação da tampa abrindo, mensagem final ("O maior tesouro é viver essa aventura juntos!"), nome da equipe, quantidade de dicas usadas e a pontuação (até 500 pontos).

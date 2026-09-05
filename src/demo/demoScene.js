@@ -1,10 +1,10 @@
 import { PISTAS } from '../config/clues.js';
 import {
-  criarCristalAzul,
-  criarEstrelaDourada,
-  criarChaveRoxa,
-  criarMoedaDourada,
-  criarGemaVerde,
+  criarTrofeuChaveAcolhida,
+  criarTrofeuCristalEscuta,
+  criarTrofeuEstrelaAlegria,
+  criarTrofeuChamaPerseveranca,
+  criarTrofeuBussolaProposito,
   animarFlutuacao,
 } from '../ar/treasures3d.js';
 import { obterPistaAtual, coletarTesouro } from '../state/gameState.js';
@@ -13,11 +13,11 @@ import { MiniViewer3D } from '../ui/miniViewer.js';
 const NAMESPACE_DEMO = 'demo';
 
 const FABRICAS_POR_TIPO = {
-  cristal: criarCristalAzul,
-  estrela: criarEstrelaDourada,
-  chave: criarChaveRoxa,
-  moeda: criarMoedaDourada,
-  gema: criarGemaVerde,
+  'chave-acolhida': criarTrofeuChaveAcolhida,
+  'cristal-escuta': criarTrofeuCristalEscuta,
+  'estrela-alegria': criarTrofeuEstrelaAlegria,
+  'chama-perseveranca': criarTrofeuChamaPerseveranca,
+  'bussola-proposito': criarTrofeuBussolaProposito,
 };
 
 export function criarVisualizadorDemo(container, progresso) {

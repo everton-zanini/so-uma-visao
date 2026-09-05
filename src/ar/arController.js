@@ -2,20 +2,20 @@ import * as THREE from 'three';
 import { MindARThree } from 'mind-ar/src/image-target/three.js';
 import { TARGETS_SRC, PISTAS } from '../config/clues.js';
 import {
-  criarCristalAzul,
-  criarEstrelaDourada,
-  criarChaveRoxa,
-  criarMoedaDourada,
-  criarGemaVerde,
+  criarTrofeuChaveAcolhida,
+  criarTrofeuCristalEscuta,
+  criarTrofeuEstrelaAlegria,
+  criarTrofeuChamaPerseveranca,
+  criarTrofeuBussolaProposito,
   animarFlutuacao,
 } from './treasures3d.js';
 
 const FABRICAS_POR_TIPO = {
-  cristal: criarCristalAzul,
-  estrela: criarEstrelaDourada,
-  chave: criarChaveRoxa,
-  moeda: criarMoedaDourada,
-  gema: criarGemaVerde,
+  'chave-acolhida': criarTrofeuChaveAcolhida,
+  'cristal-escuta': criarTrofeuCristalEscuta,
+  'estrela-alegria': criarTrofeuEstrelaAlegria,
+  'chama-perseveranca': criarTrofeuChamaPerseveranca,
+  'bussola-proposito': criarTrofeuBussolaProposito,
 };
 
 function webviewSuspeito() {

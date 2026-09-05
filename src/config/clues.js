@@ -26,9 +26,9 @@ export const PISTAS = [
       'Procurem onde a passagem depende de uma abertura.',
     dicaExtra: 'O evento acontece lá dentro, mas o primeiro limite fica antes dele.',
     tesouro: {
-      tipo: 'cristal',
-      nome: 'Cristal azul',
-      icone: '🔷',
+      tipo: 'chave-acolhida',
+      nome: 'Chave da Acolhida',
+      icone: '🔑',
     },
   },
   {
@@ -43,9 +43,9 @@ export const PISTAS = [
       'Quando todos olham para um só lugar, permanecemos atrás de cada um.',
     dicaExtra: 'Durante a mensagem, quase todo mundo depende de uma de nós.',
     tesouro: {
-      tipo: 'estrela',
-      nome: 'Estrela dourada',
-      icone: '⭐',
+      tipo: 'cristal-escuta',
+      nome: 'Cristal da Escuta',
+      icone: '🔷',
     },
   },
   {
@@ -60,9 +60,9 @@ export const PISTAS = [
       'Os menores costumam compreender este destino antes dos maiores.',
     dicaExtra: 'Neste lugar, ir e voltar pode ser a própria diversão.',
     tesouro: {
-      tipo: 'chave',
-      nome: 'Chave roxa',
-      icone: '🔑',
+      tipo: 'estrela-alegria',
+      nome: 'Estrela da Alegria',
+      icone: '⭐',
     },
   },
   {
@@ -77,9 +77,9 @@ export const PISTAS = [
       'para quem volta, a mesma resposta muda de sentido.',
     dicaExtra: 'Ligo o lugar onde os veículos ficam a outro nível.',
     tesouro: {
-      tipo: 'moeda',
-      nome: 'Moeda dourada',
-      icone: '🪙',
+      tipo: 'chama-perseveranca',
+      nome: 'Chama da Perseverança',
+      icone: '🔥',
     },
   },
   {
@@ -94,9 +94,9 @@ export const PISTAS = [
       'até que cada um volte a seguir sua própria direção.',
     dicaExtra: 'O que espera aqui costuma ter rodas.',
     tesouro: {
-      tipo: 'gema',
-      nome: 'Gema verde',
-      icone: '💚',
+      tipo: 'bussola-proposito',
+      nome: 'Bússola do Propósito',
+      icone: '🧭',
     },
   },
 ];

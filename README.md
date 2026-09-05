@@ -106,7 +106,7 @@ index.html, src/main.js           Etapa 2 — jogo completo
 src/config/clues.js                Pistas (5), mapeamento de alvos, tesouros, pontuação e custo da dica extra
 src/state/                         Estado do jogo + persistência (localStorage) — coleta e dica extra
 src/ar/arController.js             Única fonte de verdade do ciclo de vida do MindAR
-src/ar/treasures3d.js              Fábricas de geometrias Three.js (cristal, estrela, chave, moeda, gema, baú, cubo)
+src/ar/treasures3d.js              Fábricas dos 5 troféus low-poly + baú da tela final + cubo de prova
 src/ui/                            Telas (vanilla DOM), sem framework
 src/demo/demoScene.js              Lógica do modo demonstração (progresso separado, sem câmera)
 scripts/compile-targets.mjs         Compilação oficial dos 5 alvos (Node, sem navegador)

@@ -20,7 +20,7 @@ Marque cada item como ✅ (passou), ⚠️ (passou com ressalva — anote) ou �
 - [ ] Sair do jogo, entrar de novo, e **negar** a permissão desta vez: aparece uma mensagem clara (não uma tela em branco/travada), e existe um caminho visível para tentar de novo ou usar o modo demonstração.
 
 ### 2. Rastreamento
-- [ ] Apontar a câmera para o alvo 1 (portão de entrada — ver mapeamento no material do organizador): o cristal azul aparece ancorado sobre a imagem, com uma pequena animação de flutuação/rotação.
+- [ ] Apontar a câmera para o alvo 1 (portão de entrada — ver mapeamento no material do organizador): o troféu "Chave da Acolhida" aparece ancorado sobre a imagem, com uma pequena animação de flutuação/rotação.
 - [ ] Afastar a câmera até perder a imagem de vista: o cristal desaparece e o botão "Coletar" fica desabilitado.
 - [ ] Apontar de novo para a mesma imagem: o cristal reaparece e "Coletar" volta a habilitar.
 - [ ] Apontar para um alvo **errado** (qualquer um dos outros 4, estando na pista 1): o jogo orienta a seguir a pista atual e **não** libera a coleta.
