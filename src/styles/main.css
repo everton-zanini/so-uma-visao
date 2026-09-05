@@ -1,0 +1,381 @@
+:root {
+  --azul-escuro: #0b1030;
+  --azul-escuro-2: #131a4a;
+  --roxo: #3a1560;
+  --roxo-claro: #6b3fa0;
+  --dourado: #e6bd54;
+  --dourado-claro: #f7dd9a;
+  --texto: #f4f1ff;
+  --texto-fraco: #c9c3e6;
+  --erro: #ff6b6b;
+  --sucesso: #6bffb0;
+  --fonte: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--azul-escuro);
+  color: var(--texto);
+  font-family: var(--fonte);
+}
+
+body {
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+#app, #proof-app {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.tela {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  gap: 16px;
+  background: radial-gradient(circle at 50% 0%, var(--azul-escuro-2), var(--azul-escuro) 70%);
+}
+
+.tela--centro {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  color: var(--dourado-claro);
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+}
+
+p {
+  margin: 0;
+  line-height: 1.5;
+  color: var(--texto-fraco);
+}
+
+.marca {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--dourado);
+  letter-spacing: 0.02em;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 56px;
+  padding: 14px 20px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.08s ease, opacity 0.15s ease;
+  touch-action: manipulation;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn--primario {
+  background: linear-gradient(135deg, var(--dourado), #c99a2e);
+  color: #241a04;
+}
+
+.btn--secundario {
+  background: var(--roxo-claro);
+  color: var(--texto);
+}
+
+.btn--fantasma {
+  background: transparent;
+  color: var(--texto-fraco);
+  border: 2px solid var(--roxo-claro);
+}
+
+.btn--perigo {
+  background: transparent;
+  color: var(--erro);
+  border: 2px solid var(--erro);
+}
+
+.campo {
+  width: 100%;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  color: var(--texto-fraco);
+}
+
+.campo input[type="text"] {
+  width: 100%;
+  min-height: 52px;
+  padding: 12px 14px;
+  font-size: 1.05rem;
+  border-radius: 12px;
+  border: 2px solid var(--roxo-claro);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--texto);
+}
+
+.campo input[type="text"]:focus {
+  outline: 2px solid var(--dourado);
+}
+
+.cartao {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(230, 189, 84, 0.25);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.selo {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.selo--demo {
+  background: var(--roxo-claro);
+  color: var(--texto);
+}
+
+.estado {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.estado::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--texto-fraco);
+}
+
+.estado--procurando::before {
+  background: var(--dourado);
+  animation: pulsar 1s infinite;
+}
+
+.estado--encontrado::before {
+  background: var(--sucesso);
+}
+
+.estado--erro::before {
+  background: var(--erro);
+}
+
+@keyframes pulsar {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.erro-caixa {
+  background: rgba(255, 107, 107, 0.12);
+  border: 1px solid var(--erro);
+  border-radius: 12px;
+  padding: 14px;
+  color: #ffd9d9;
+  font-size: 0.95rem;
+}
+
+.ar-container {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+}
+
+.ar-container canvas,
+.ar-container video {
+  border-radius: 16px;
+}
+
+.ar-hud {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 14px;
+  z-index: 5;
+}
+
+.ar-hud > * {
+  pointer-events: auto;
+}
+
+.ar-hud-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.pastilha {
+  background: rgba(11, 16, 48, 0.75);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+}
+
+.inventario {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.slot {
+  aspect-ratio: 1;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 2px solid rgba(230, 189, 84, 0.25);
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 8px;
+}
+
+.slot--coletado {
+  border-color: var(--dourado);
+  background: rgba(230, 189, 84, 0.12);
+}
+
+.slot-icone {
+  font-size: 1.8rem;
+}
+
+.pontuacao {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--dourado-claro);
+}
+
+.rodape-fixo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cena-3d {
+  flex: 1;
+  min-height: 220px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: radial-gradient(circle, var(--roxo) 0%, var(--azul-escuro) 80%);
+}
+
+/* Na tela final (layout centralizado, com pouco conteúdo ao redor), flex:1
+   deixaria o container esticar bem além do necessário e ficar alto/estreito
+   demais, distorcendo a câmera do MiniViewer3D. Altura fixa e razoável. */
+#cena-final {
+  flex: none;
+  width: 100%;
+  height: 260px;
+}
+
+.modal-fundo {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 20;
+}
+
+.modal-caixa {
+  background: var(--azul-escuro-2);
+  border: 1px solid var(--dourado);
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 360px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.oculto {
+  display: none !important;
+}
+
+.espacador {
+  flex: 1;
+}
+
+.barra-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.botao-pequeno {
+  width: auto;
+  min-height: 40px;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+}
+
+.margem-topo {
+  margin-top: 12px;
+}
+
+.selo-flutuante {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 50;
+}
+
+.creditos {
+  font-size: 0.7rem;
+  color: var(--texto-fraco);
+  opacity: 0.7;
+  text-align: center;
+}

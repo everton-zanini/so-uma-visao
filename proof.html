@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <title>Prova técnica AR — Missão Tesouro</title>
+  <link rel="stylesheet" href="/src/styles/main.css" />
+</head>
+<body>
+  <div id="proof-app">
+    <div class="tela" style="gap: 12px;">
+      <h1>Prova técnica mínima</h1>
+      <p>Rastreamento de uma imagem com MindAR + Three.js. Aponte a câmera para o alvo oficial de exemplo impresso ou exibido em outra tela.</p>
+
+      <div class="ar-container" id="ar-container" style="min-height: 55vh;">
+        <div class="ar-hud">
+          <div class="ar-hud-topo">
+            <span class="pastilha estado" id="indicador-estado">inativo</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="erro-caixa" class="erro-caixa oculto"></div>
+
+      <div class="rodape-fixo">
+        <button class="btn btn--primario" id="btn-iniciar">Iniciar câmera</button>
+        <button class="btn btn--perigo oculto" id="btn-parar">Parar câmera</button>
+      </div>
+
+      <p class="creditos">
+        Alvo de exemplo (“card-example”) e arquivo <code>card.mind</code> © projeto
+        <a href="https://github.com/hiukim/mind-ar-js" style="color: inherit;">MindAR (hiukim/mind-ar-js)</a>,
+        licença MIT, usado apenas para validar a integração técnica.
+      </p>
+    </div>
+  </div>
+  <script type="module" src="/src/proof/main.js"></script>
+</body>
+</html>

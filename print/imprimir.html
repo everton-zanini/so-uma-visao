@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Imprimir alvos — Missão Tesouro</title>
+<style>
+  :root {
+    --azul-escuro: #0b1030;
+    --dourado: #b8862f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #ddd;
+    color: #111;
+  }
+  .barra-instrucoes {
+    background: var(--azul-escuro);
+    color: #fff;
+    padding: 16px 20px;
+  }
+  .barra-instrucoes h1 {
+    margin: 0 0 6px 0;
+    font-size: 1.3rem;
+  }
+  .barra-instrucoes p {
+    margin: 4px 0;
+    font-size: 0.9rem;
+    color: #d8d4ef;
+  }
+  .barra-instrucoes button {
+    margin-top: 10px;
+    padding: 10px 18px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    background: #e6bd54;
+    cursor: pointer;
+  }
+  .folha {
+    background: #fff;
+    width: 210mm;
+    min-height: 297mm;
+    margin: 24px auto;
+    padding: 18mm 16mm;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .folha h2 {
+    color: var(--azul-escuro);
+    font-size: 1.6rem;
+    margin: 0 0 6px 0;
+  }
+  .folha .subtitulo {
+    color: #555;
+    font-size: 0.95rem;
+    margin: 0 0 18mm 0;
+  }
+  .folha img {
+    width: 150mm;
+    height: 150mm;
+    object-fit: contain;
+    border: 2px solid #222;
+  }
+  .instrucoes {
+    margin-top: 18mm;
+    max-width: 160mm;
+    font-size: 0.85rem;
+    color: #333;
+    text-align: left;
+  }
+  .instrucoes h3 {
+    font-size: 0.95rem;
+    margin: 0 0 6px 0;
+    color: var(--azul-escuro);
+  }
+  .instrucoes ul {
+    margin: 0;
+    padding-left: 18px;
+  }
+  .rodape-folha {
+    margin-top: auto;
+    padding-top: 12mm;
+    font-size: 0.7rem;
+    color: #888;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .barra-instrucoes { display: none; }
+    .folha {
+      margin: 0;
+      box-shadow: none;
+      width: auto;
+      min-height: 100vh;
+      page-break-after: always;
+    }
+    .folha:last-child { page-break-after: auto; }
+  }
+</style>
+</head>
+<body>
+  <div class="barra-instrucoes">
+    <h1>Imprimir alvos — Missão Tesouro</h1>
+    <p>3 folhas, uma imagem por página. Imprima em papel comum, tamanho A4, sem cortar as bordas pretas da imagem.</p>
+    <p>Fixe cada folha bem esticada e lisa (sem dobras) no local correspondente, em boa iluminação.</p>
+    <button onclick="window.print()">Imprimir</button>
+  </div>
+
+  <section class="folha">
+    <h2>Alvo 1 — Recepção</h2>
+    <p class="subtitulo">Tesouro: Cristal azul</p>
+    <img src="/print-images/01-recepcao.png" alt="Imagem de rastreamento: Recepção" />
+    <div class="instrucoes">
+      <h3>Onde fixar</h3>
+      <ul>
+        <li>Na Recepção, em local visível e plano (parede, balcão, painel).</li>
+        <li>Evite luz direta forte ou reflexos sobre a imagem.</li>
+        <li>Deixe a folha totalmente esticada — sem dobras ou ondulações.</li>
+      </ul>
+    </div>
+    <p class="rodape-folha">Missão Tesouro — imagem 1 de 3 — não recortar as bordas pretas.</p>
+  </section>
+
+  <section class="folha">
+    <h2>Alvo 2 — Área de convivência</h2>
+    <p class="subtitulo">Tesouro: Estrela dourada</p>
+    <img src="/print-images/02-convivencia.png" alt="Imagem de rastreamento: Área de convivência" />
+    <div class="instrucoes">
+      <h3>Onde fixar</h3>
+      <ul>
+        <li>No espaço onde a turma costuma se reunir para conversar.</li>
+        <li>Altura confortável para apontar o celular (aprox. 1 a 1,5 m do chão).</li>
+        <li>Deixe a folha totalmente esticada — sem dobras ou ondulações.</li>
+      </ul>
+    </div>
+    <p class="rodape-folha">Missão Tesouro — imagem 2 de 3 — não recortar as bordas pretas.</p>
+  </section>
+
+  <section class="folha">
+    <h2>Alvo 3 — Palco</h2>
+    <p class="subtitulo">Tesouro: Chave roxa</p>
+    <img src="/print-images/03-palco.png" alt="Imagem de rastreamento: Palco" />
+    <div class="instrucoes">
+      <h3>Onde fixar</h3>
+      <ul>
+        <li>Próximo ao palco ou púlpito, onde a atenção do grupo se volta.</li>
+        <li>Evite contraluz (janelas/refletores atrás da imagem).</li>
+        <li>Deixe a folha totalmente esticada — sem dobras ou ondulações.</li>
+      </ul>
+    </div>
+    <p class="rodape-folha">Missão Tesouro — imagem 3 de 3 — não recortar as bordas pretas.</p>
+  </section>
+</body>
+</html>

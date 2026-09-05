@@ -1,0 +1,23 @@
+{
+  "name": "missao-tesouro",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Caça ao tesouro em realidade aumentada (MindAR + Three.js) para evento de jovens",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:https": "vite --mode https",
+    "build": "vite build",
+    "preview": "vite preview --mode https",
+    "compile-targets": "node scripts/compile-targets.mjs"
+  },
+  "dependencies": {
+    "mind-ar": "1.2.5",
+    "three": "0.160.0"
+  },
+  "devDependencies": {
+    "vite": "5.4.21",
+    "@vitejs/plugin-basic-ssl": "1.2.0",
+    "canvas": "2.11.2"
+  }
+}

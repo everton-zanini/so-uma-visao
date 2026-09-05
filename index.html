@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <title>Missão Tesouro</title>
+  <link rel="stylesheet" href="/src/styles/main.css" />
+</head>
+<body>
+  <div id="app">
+    <span id="selo-demo-flutuante" class="selo selo--demo selo-flutuante oculto">Modo demonstração</span>
+
+    <section id="tela-inicio" class="tela tela--centro">
+      <div class="marca">Missão Tesouro</div>
+      <p>Siga as pistas, encontre as imagens e revele os tesouros.</p>
+      <div class="campo">
+        <label for="input-nome-equipe">Nome da equipe</label>
+        <input type="text" id="input-nome-equipe" maxlength="40" placeholder="Ex: Os Exploradores" />
+      </div>
+      <button class="btn btn--primario" id="btn-comecar">Começar</button>
+      <button class="btn btn--fantasma oculto" id="btn-continuar">Continuar partida salva</button>
+      <button class="btn btn--secundario" id="btn-modo-demo">Modo demonstração</button>
+    </section>
+
+    <section id="tela-pista" class="tela oculto">
+      <div class="barra-topo">
+        <span class="pastilha" id="indicador-progresso-pista">Pista 1 de 3</span>
+        <button class="btn btn--fantasma botao-pequeno" id="btn-ver-inventario">Inventário</button>
+      </div>
+      <h2 id="pista-local"></h2>
+      <div class="cartao">
+        <p id="pista-texto"></p>
+      </div>
+      <div class="cena-3d oculto" id="cena-demo-pista"></div>
+      <div class="espacador"></div>
+      <button class="btn btn--primario" id="btn-procurar">Procurar tesouro</button>
+      <button class="btn btn--primario oculto" id="btn-simular">Simular descoberta</button>
+    </section>
+
+    <section id="tela-descoberta" class="tela oculto">
+      <div class="ar-container" id="ar-container-jogo">
+        <div class="ar-hud">
+          <div class="ar-hud-topo">
+            <span class="pastilha estado" id="indicador-estado-jogo">procurando</span>
+            <button class="btn btn--perigo botao-pequeno" id="btn-sair-ar">Sair</button>
+          </div>
+          <span class="pastilha" id="pista-lembrete"></span>
+        </div>
+      </div>
+      <div id="erro-caixa-jogo" class="erro-caixa oculto margem-topo"></div>
+      <button class="btn btn--secundario oculto" id="btn-tentar-demo-apos-erro">Tentar modo demonstração</button>
+      <button class="btn btn--primario margem-topo" id="btn-coletar" disabled>Coletar</button>
+
+      <div id="confirmacao-coleta" class="cartao oculto">
+        <h3 id="confirmacao-titulo"></h3>
+        <p id="confirmacao-texto"></p>
+        <button class="btn btn--primario margem-topo" id="btn-continuar-apos-coleta">Continuar</button>
+      </div>
+    </section>
+
+    <section id="tela-inventario" class="tela oculto">
+      <h2>Inventário</h2>
+      <div class="inventario" id="grade-inventario"></div>
+      <p class="pontuacao" id="pontuacao-total">0 pontos</p>
+      <div class="espacador"></div>
+      <button class="btn btn--fantasma" id="btn-fechar-inventario">Voltar</button>
+    </section>
+
+    <section id="tela-final" class="tela tela--centro oculto">
+      <h1>Vocês encontraram os 3 tesouros!</h1>
+      <div class="cena-3d" id="cena-final"></div>
+      <button class="btn btn--primario" id="btn-abrir-tesouro">Abrir tesouro</button>
+      <p id="mensagem-final" class="oculto">"O maior tesouro é viver essa aventura juntos!"</p>
+      <p id="equipe-final" class="oculto"></p>
+      <p class="pontuacao oculto" id="pontuacao-final"></p>
+      <button class="btn btn--fantasma" id="btn-reiniciar">Reiniciar</button>
+    </section>
+
+    <div id="modal-confirmar" class="modal-fundo oculto">
+      <div class="modal-caixa">
+        <h3>Reiniciar partida?</h3>
+        <p>Isso vai apagar o progresso atual. Essa ação não pode ser desfeita.</p>
+        <button class="btn btn--perigo" id="btn-confirmar-reiniciar">Sim, reiniciar</button>
+        <button class="btn btn--fantasma" id="btn-cancelar-reiniciar">Cancelar</button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
