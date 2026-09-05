@@ -51,6 +51,7 @@ class ARController {
     this.anchors = [];
     this.estado = 'inativo';
     this.targetIndexEsperado = null;
+    this.coletados = [];
     this.callbacks = {};
     this.relogio = new THREE.Clock();
     this.anchorVisivelIndex = null;
@@ -89,6 +90,11 @@ class ARController {
       anchor.group.add(objeto3d);
 
       anchor.onTargetFound = () => {
+        if (this.coletados[indice]) {
+          // Tesouro já coletado: não reexibir o objeto 3D nem disparar callbacks.
+          anchor.group.visible = false;
+          return;
+        }
         this.anchorVisivelIndex = pista.targetIndex;
         if (pista.targetIndex === this.targetIndexEsperado) {
           this._emitirEstado('alvo-encontrado');
@@ -98,6 +104,7 @@ class ARController {
         }
       };
       anchor.onTargetLost = () => {
+        if (this.coletados[indice]) return;
         if (this.anchorVisivelIndex === pista.targetIndex) {
           this.anchorVisivelIndex = null;
         }
@@ -116,6 +123,13 @@ class ARController {
   _loopRender() {
     const tempo = this.relogio.getElapsedTime();
     this.anchors.forEach(({ objeto3d, targetIndex }, indice) => {
+      if (this.coletados[indice]) {
+        // O mind-ar recalcula group.visible a cada frame com base na
+        // detecção da imagem; sem isso o tesouro já coletado voltaria a
+        // aparecer assim que a câmera enxergasse o marcador de novo.
+        objeto3d.visible = false;
+        return;
+      }
       if (targetIndex === this.anchorVisivelIndex) {
         animarFlutuacao(objeto3d, tempo, indice);
       }
@@ -125,8 +139,9 @@ class ARController {
     }
   }
 
-  async iniciar(container, targetIndexEsperado) {
+  async iniciar(container, targetIndexEsperado, coletados = []) {
     this.targetIndexEsperado = targetIndexEsperado;
+    this.coletados = coletados;
     this.anchorVisivelIndex = null;
     this._emitirEstado('inicializando');
 

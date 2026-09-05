@@ -114,7 +114,7 @@ function aoClicarProcurar() {
   resetarPainelDescoberta();
   el('pista-lembrete').textContent = `Procurando: ${pista.local} — ${pista.tesouro.nome}`;
   mostrarTela('tela-descoberta');
-  arController.iniciar(el('ar-container-jogo'), pista.targetIndex);
+  arController.iniciar(el('ar-container-jogo'), pista.targetIndex, progresso.collected);
 }
 
 function aoClicarSairAR() {
