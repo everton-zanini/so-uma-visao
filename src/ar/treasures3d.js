@@ -115,6 +115,36 @@ export function criarBau() {
   return { grupo, grupoTampa };
 }
 
+export function criarMoedaDourada() {
+  const grupo = new THREE.Group();
+  const material = new THREE.MeshStandardMaterial({
+    color: 0xe6bd54,
+    emissive: 0x7a5a10,
+    emissiveIntensity: 0.5,
+    roughness: 0.25,
+    metalness: 0.7,
+  });
+  const moeda = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.16, 0.035, 32), material);
+  moeda.rotation.x = Math.PI / 2;
+  grupo.add(moeda);
+  return grupo;
+}
+
+export function criarGemaVerde() {
+  const grupo = new THREE.Group();
+  const geometria = new THREE.IcosahedronGeometry(0.17, 0);
+  const material = new THREE.MeshStandardMaterial({
+    color: 0x2fd67a,
+    emissive: 0x116b3a,
+    emissiveIntensity: 0.6,
+    roughness: 0.2,
+    metalness: 0.15,
+  });
+  const gema = new THREE.Mesh(geometria, material);
+  grupo.add(gema);
+  return grupo;
+}
+
 export function criarCuboProva() {
   const geometria = new THREE.BoxGeometry(0.35, 0.35, 0.35);
   const material = new THREE.MeshNormalMaterial();

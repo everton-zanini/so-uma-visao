@@ -5,6 +5,8 @@ import {
   criarCristalAzul,
   criarEstrelaDourada,
   criarChaveRoxa,
+  criarMoedaDourada,
+  criarGemaVerde,
   animarFlutuacao,
 } from './treasures3d.js';
 
@@ -12,6 +14,8 @@ const FABRICAS_POR_TIPO = {
   cristal: criarCristalAzul,
   estrela: criarEstrelaDourada,
   chave: criarChaveRoxa,
+  moeda: criarMoedaDourada,
+  gema: criarGemaVerde,
 };
 
 function webviewSuspeito() {

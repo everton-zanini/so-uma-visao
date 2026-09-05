@@ -5,6 +5,7 @@ import {
   iniciarNovaPartida,
   obterPistaAtual,
   coletarTesouro,
+  revelarDica,
   reiniciarPartida,
 } from '../state/gameState.js';
 import { arController } from '../ar/arController.js';
@@ -57,6 +58,28 @@ function continuarPartidaReal() {
   irParaTelaAtual();
 }
 
+function renderizarDicaExtra(pista) {
+  const revelada = progresso.dicasReveladas[progresso.clueIndex];
+  el('btn-revelar-dica').classList.toggle('oculto', revelada);
+  el('bloco-dica-extra').classList.toggle('oculto', !revelada);
+  el('dica-extra-texto').textContent = revelada ? pista.dicaExtra : '';
+}
+
+function aoClicarRevelarDica() {
+  mostrarModal('modal-confirmar-dica');
+}
+
+function aoConfirmarRevelarDica() {
+  const resultado = revelarDica(namespaceAtual(), progresso, progresso.clueIndex);
+  progresso = resultado.progresso;
+  esconderModal('modal-confirmar-dica');
+  mostrarTelaPista();
+}
+
+function aoCancelarRevelarDica() {
+  esconderModal('modal-confirmar-dica');
+}
+
 function mostrarTelaPista() {
   const pista = obterPistaAtual(progresso);
   if (!pista) {
@@ -65,8 +88,8 @@ function mostrarTelaPista() {
   }
 
   el('indicador-progresso-pista').textContent = `Pista ${progresso.clueIndex + 1} de ${TOTAL_PISTAS}`;
-  el('pista-local').textContent = pista.local;
   el('pista-texto').textContent = pista.texto;
+  renderizarDicaExtra(pista);
 
   const ehDemo = modo === 'demo';
   el('btn-procurar').classList.toggle('oculto', ehDemo);
@@ -112,7 +135,7 @@ function aoClicarProcurar() {
   const pista = obterPistaAtual(progresso);
   if (!pista) return;
   resetarPainelDescoberta();
-  el('pista-lembrete').textContent = `Procurando: ${pista.local} — ${pista.tesouro.nome}`;
+  el('pista-lembrete').textContent = 'Aponte a câmera para a imagem da pista atual.';
   mostrarTela('tela-descoberta');
   arController.iniciar(el('ar-container-jogo'), pista.targetIndex, progresso.collected);
 }
@@ -186,10 +209,14 @@ function aoClicarFecharInventario() {
 function mostrarTelaFinal() {
   el('mensagem-final').classList.add('oculto');
   el('equipe-final').classList.add('oculto');
+  el('dicas-usadas-final').classList.add('oculto');
   el('pontuacao-final').classList.add('oculto');
   el('btn-abrir-tesouro').classList.remove('oculto');
   el('btn-abrir-tesouro').disabled = false;
+  el('aviso-demo-final').classList.toggle('oculto', modo !== 'demo');
   el('equipe-final').textContent = `Equipe: ${progresso.teamName}`;
+  const totalDicas = progresso.dicasReveladas.filter(Boolean).length;
+  el('dicas-usadas-final').textContent = `Dicas utilizadas: ${totalDicas}`;
   el('pontuacao-final').textContent = `${progresso.score} pontos`;
   tampaAberta = false;
 
@@ -220,6 +247,7 @@ function animarAberturaTampa() {
     } else {
       el('mensagem-final').classList.remove('oculto');
       el('equipe-final').classList.remove('oculto');
+      el('dicas-usadas-final').classList.remove('oculto');
       el('pontuacao-final').classList.remove('oculto');
     }
   }
@@ -313,6 +341,10 @@ export function iniciarApp() {
   el('btn-comecar').addEventListener('click', () => comecarPartida('real'));
   el('btn-modo-demo').addEventListener('click', () => comecarPartida('demo'));
   el('btn-continuar').addEventListener('click', continuarPartidaReal);
+
+  el('btn-revelar-dica').addEventListener('click', aoClicarRevelarDica);
+  el('btn-confirmar-dica').addEventListener('click', aoConfirmarRevelarDica);
+  el('btn-cancelar-dica').addEventListener('click', aoCancelarRevelarDica);
 
   el('btn-procurar').addEventListener('click', aoClicarProcurar);
   el('btn-simular').addEventListener('click', aoClicarSimular);

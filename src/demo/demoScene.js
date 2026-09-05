@@ -3,6 +3,8 @@ import {
   criarCristalAzul,
   criarEstrelaDourada,
   criarChaveRoxa,
+  criarMoedaDourada,
+  criarGemaVerde,
   animarFlutuacao,
 } from '../ar/treasures3d.js';
 import { obterPistaAtual, coletarTesouro } from '../state/gameState.js';
@@ -14,6 +16,8 @@ const FABRICAS_POR_TIPO = {
   cristal: criarCristalAzul,
   estrela: criarEstrelaDourada,
   chave: criarChaveRoxa,
+  moeda: criarMoedaDourada,
+  gema: criarGemaVerde,
 };
 
 export function criarVisualizadorDemo(container, progresso) {

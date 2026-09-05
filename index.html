@@ -24,12 +24,15 @@
 
     <section id="tela-pista" class="tela oculto">
       <div class="barra-topo">
-        <span class="pastilha" id="indicador-progresso-pista">Pista 1 de 3</span>
+        <span class="pastilha" id="indicador-progresso-pista">Pista 1 de 5</span>
         <button class="btn btn--fantasma botao-pequeno" id="btn-ver-inventario">Inventário</button>
       </div>
-      <h2 id="pista-local"></h2>
       <div class="cartao">
         <p id="pista-texto"></p>
+      </div>
+      <button class="btn btn--secundario oculto" id="btn-revelar-dica">Revelar dica (-30 pontos)</button>
+      <div class="cartao oculto" id="bloco-dica-extra">
+        <p id="dica-extra-texto"></p>
       </div>
       <div class="cena-3d oculto" id="cena-demo-pista"></div>
       <div class="espacador"></div>
@@ -67,12 +70,15 @@
     </section>
 
     <section id="tela-final" class="tela tela--centro oculto">
-      <h1>Vocês encontraram os 3 tesouros!</h1>
+      <h1>Vocês encontraram os 5 tesouros!</h1>
+      <p id="aviso-demo-final" class="erro-caixa oculto">Modo demonstração — este resultado não vale para a competição.</p>
       <div class="cena-3d" id="cena-final"></div>
       <button class="btn btn--primario" id="btn-abrir-tesouro">Abrir tesouro</button>
       <p id="mensagem-final" class="oculto">"O maior tesouro é viver essa aventura juntos!"</p>
       <p id="equipe-final" class="oculto"></p>
+      <p id="dicas-usadas-final" class="oculto"></p>
       <p class="pontuacao oculto" id="pontuacao-final"></p>
+      <p class="creditos">Apresente esta tela ao organizador para conferência da pontuação.</p>
       <button class="btn btn--fantasma" id="btn-reiniciar">Reiniciar</button>
     </section>
 
@@ -82,6 +88,15 @@
         <p>Isso vai apagar o progresso atual. Essa ação não pode ser desfeita.</p>
         <button class="btn btn--perigo" id="btn-confirmar-reiniciar">Sim, reiniciar</button>
         <button class="btn btn--fantasma" id="btn-cancelar-reiniciar">Cancelar</button>
+      </div>
+    </div>
+
+    <div id="modal-confirmar-dica" class="modal-fundo oculto">
+      <div class="modal-caixa">
+        <h3>Revelar dica extra?</h3>
+        <p>Isso vai descontar 30 pontos da pontuação final. A dica fica visível a partir de agora e não desconta de novo.</p>
+        <button class="btn btn--perigo" id="btn-confirmar-dica">Sim, revelar (-30 pontos)</button>
+        <button class="btn btn--fantasma" id="btn-cancelar-dica">Cancelar</button>
       </div>
     </div>
   </div>
