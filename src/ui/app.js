@@ -88,6 +88,7 @@ function mostrarTelaPista() {
   }
 
   el('indicador-progresso-pista').textContent = `Pista ${progresso.clueIndex + 1} de ${TOTAL_PISTAS}`;
+  el('pista-icone').textContent = pista.iconePista;
   el('pista-texto').textContent = pista.texto;
   renderizarDicaExtra(pista);
 

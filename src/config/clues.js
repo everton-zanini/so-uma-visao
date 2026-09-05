@@ -3,8 +3,10 @@
 // (mesma ordem usada em scripts/compile-targets.mjs).
 //
 // "local" é informação do organizador (material de impressão/montagem) e
-// NUNCA deve ser exibida na interface do jogador — só "texto" (enigma) e,
-// depois de revelada, "dicaExtra".
+// NUNCA deve ser exibida na interface do jogador — só "texto" (enigma),
+// "iconePista" (um símbolo ambiente, sempre visível, que remete ao local de
+// forma sutil/abstrata — nunca o objeto óbvio do lugar) e, depois de
+// revelada, "dicaExtra".
 
 export const TARGETS_SRC = '/targets/treasure-hunt.mind';
 
@@ -16,8 +18,13 @@ export const PISTAS = [
     id: 'portao-entrada',
     targetIndex: 0,
     local: 'Portão de entrada',
-    texto: 'Toda jornada começa por onde todos entram e saem.',
-    dicaExtra: 'É o primeiro lugar que você atravessa ao chegar ao salão — o caminho de entrada.',
+    iconePista: '🚦',
+    texto:
+      'Separo dois lados sem escolher nenhum.\n' +
+      'Quando cedo, permito; quando resisto, impeço.\n' +
+      'Quem chega me enfrenta antes de pertencer ao que está além.\n' +
+      'Procurem onde a passagem depende de uma abertura.',
+    dicaExtra: 'O evento acontece lá dentro, mas o primeiro limite fica antes dele.',
     tesouro: {
       tipo: 'cristal',
       nome: 'Cristal azul',
@@ -28,8 +35,13 @@ export const PISTAS = [
     id: 'cadeiras',
     targetIndex: 1,
     local: 'Cadeiras',
-    texto: 'Procure onde tantos se sentam, lado a lado, esperando o que vem a seguir.',
-    dicaExtra: 'Fileiras enfileiradas, prontas para quem chega e se acomoda para o culto.',
+    iconePista: '👥',
+    texto:
+      'Somos muitos, mas repetimos a mesma forma.\n' +
+      'Sustentamos quem ouve, sem entender uma palavra.\n' +
+      'Temos costas, mas não nos deitamos.\n' +
+      'Quando todos olham para um só lugar, permanecemos atrás de cada um.',
+    dicaExtra: 'Durante a mensagem, quase todo mundo depende de uma de nós.',
     tesouro: {
       tipo: 'estrela',
       nome: 'Estrela dourada',
@@ -40,8 +52,13 @@ export const PISTAS = [
     id: 'playground',
     targetIndex: 2,
     local: 'Playground',
-    texto: 'Onde a alegria salta mais alto e o brincar nunca para.',
-    dicaExtra: 'É a área de recreação, com brinquedos para as crianças.',
+    iconePista: '🔄',
+    texto:
+      'Aqui, partir nem sempre significa sair do lugar.\n' +
+      'Há viagens que terminam onde começaram\n' +
+      'e descidas procuradas por vontade própria.\n' +
+      'Os menores costumam compreender este destino antes dos maiores.',
+    dicaExtra: 'Neste lugar, ir e voltar pode ser a própria diversão.',
     tesouro: {
       tipo: 'chave',
       nome: 'Chave roxa',
@@ -52,8 +69,13 @@ export const PISTAS = [
     id: 'escadas-estacionamento',
     targetIndex: 3,
     local: 'Escadas do estacionamento',
-    texto: 'Degrau a degrau, o caminho leva para onde os carros ficam guardados.',
-    dicaExtra: 'Procure a escada que liga o salão ao estacionamento.',
+    iconePista: '📶',
+    texto:
+      'Aproximo o que está separado sem diminuir a distância.\n' +
+      'Sou feita de diferenças que se vencem uma por vez.\n' +
+      'Para quem chega, posso ser subida;\n' +
+      'para quem volta, a mesma resposta muda de sentido.',
+    dicaExtra: 'Ligo o lugar onde os veículos ficam a outro nível.',
     tesouro: {
       tipo: 'moeda',
       nome: 'Moeda dourada',
@@ -64,8 +86,13 @@ export const PISTAS = [
     id: 'estacionamento',
     targetIndex: 4,
     local: 'Estacionamento',
-    texto: 'O último passo da jornada é onde os carros descansam, esperando a volta para casa.',
-    dicaExtra: 'É a área externa onde os carros ficam estacionados.',
+    iconePista: '🧭',
+    texto:
+      'Recebo quem trouxe vocês, mas não participa do encontro.\n' +
+      'Guardo força em silêncio e caminhos em repouso.\n' +
+      'Aqui, muitos ficam lado a lado\n' +
+      'até que cada um volte a seguir sua própria direção.',
+    dicaExtra: 'O que espera aqui costuma ter rodas.',
     tesouro: {
       tipo: 'gema',
       nome: 'Gema verde',

@@ -158,6 +158,22 @@ p {
   padding: 18px;
 }
 
+/* Os enigmas são escritos em versos curtos (uma ideia por linha); preserva
+   as quebras de linha do texto em vez de deixar o navegador colapsá-las. */
+#pista-texto {
+  white-space: pre-line;
+}
+
+/* Símbolo ambiente da pista: uma dica visual sutil, sempre visível, sem
+   texto/rótulo — só o enigma e a dica extra revelada carregam informação
+   explícita. */
+.pista-icone {
+  font-size: 2.6rem;
+  line-height: 1;
+  text-align: center;
+  opacity: 0.85;
+}
+
 .selo {
   display: inline-block;
   padding: 4px 12px;
