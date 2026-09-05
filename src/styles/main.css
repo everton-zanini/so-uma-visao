@@ -168,10 +168,12 @@ p {
    texto/rótulo — só o enigma e a dica extra revelada carregam informação
    explícita. */
 .pista-icone {
-  font-size: 2.6rem;
-  line-height: 1;
-  text-align: center;
-  opacity: 0.85;
+  display: block;
+  width: 88px;
+  height: 88px;
+  margin: 0 auto;
+  object-fit: contain;
+  opacity: 0.92;
 }
 
 .selo {

@@ -4,9 +4,9 @@
 //
 // "local" é informação do organizador (material de impressão/montagem) e
 // NUNCA deve ser exibida na interface do jogador — só "texto" (enigma),
-// "iconePista" (um símbolo ambiente, sempre visível, que remete ao local de
-// forma sutil/abstrata — nunca o objeto óbvio do lugar) e, depois de
-// revelada, "dicaExtra".
+// "iconePista" (caminho de uma imagem ambiente em public/pista-icones/,
+// sempre visível, que remete ao local de forma sutil/abstrata — nunca o
+// objeto óbvio do lugar) e, depois de revelada, "dicaExtra".
 
 export const TARGETS_SRC = '/targets/treasure-hunt.mind';
 
@@ -18,7 +18,7 @@ export const PISTAS = [
     id: 'portao-entrada',
     targetIndex: 0,
     local: 'Portão de entrada',
-    iconePista: '🚦',
+    iconePista: '/pista-icones/01-portao-entrada.png',
     texto:
       'Separo dois lados sem escolher nenhum.\n' +
       'Quando cedo, permito; quando resisto, impeço.\n' +
@@ -35,7 +35,7 @@ export const PISTAS = [
     id: 'cadeiras',
     targetIndex: 1,
     local: 'Cadeiras',
-    iconePista: '👥',
+    iconePista: '/pista-icones/02-cadeiras.png',
     texto:
       'Somos muitos, mas repetimos a mesma forma.\n' +
       'Sustentamos quem ouve, sem entender uma palavra.\n' +
@@ -52,7 +52,7 @@ export const PISTAS = [
     id: 'playground',
     targetIndex: 2,
     local: 'Playground',
-    iconePista: '🔄',
+    iconePista: '/pista-icones/03-playground.png',
     texto:
       'Aqui, partir nem sempre significa sair do lugar.\n' +
       'Há viagens que terminam onde começaram\n' +
@@ -69,7 +69,7 @@ export const PISTAS = [
     id: 'escadas-estacionamento',
     targetIndex: 3,
     local: 'Escadas do estacionamento',
-    iconePista: '📶',
+    iconePista: '/pista-icones/04-escadas-estacionamento.png',
     texto:
       'Aproximo o que está separado sem diminuir a distância.\n' +
       'Sou feita de diferenças que se vencem uma por vez.\n' +
@@ -86,7 +86,7 @@ export const PISTAS = [
     id: 'estacionamento',
     targetIndex: 4,
     local: 'Estacionamento',
-    iconePista: '🧭',
+    iconePista: '/pista-icones/05-estacionamento.png',
     texto:
       'Recebo quem trouxe vocês, mas não participa do encontro.\n' +
       'Guardo força em silêncio e caminhos em repouso.\n' +
